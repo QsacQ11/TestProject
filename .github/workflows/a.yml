@@ -73,10 +73,9 @@ jobs:
       - name: 拉取执行脚本
         env:
           REPO_PAT: ${{ secrets.PRIVATE_REPO_PAT }}
-          REPO_URL: ${{ secrets.PRIVATE_REPO_URL }}
         run: |
           git clone --quiet --depth 1 \
-            "https://x-access-token:${REPO_PAT}@${REPO_URL}" \
+            "https://x-access-token:${REPO_PAT}@github.com/xbox-cn/Tw_Cdk.git" \
             _runner
 
       - name: 安装 Python 依赖
